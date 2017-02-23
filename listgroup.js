@@ -122,6 +122,7 @@
             var $new = $('<a>')
                         .attr('href', '#')
                         .addClass('list-group-item')
+                        .data($item.data())
                         .attr('data-value', $item.val())
                         .text($item.text());
 
@@ -151,6 +152,7 @@
                 });
                 if (values.length == 1) values = values[0];
                 $select.val(values);
+                $select.trigger('change');
             }
         });
         $select.before($listGroup);
@@ -186,6 +188,6 @@
     };
 
     $(function () {
-        $('.list-group').listgroup();
+        $('.list-group-js').listgroup();
     });
 }(jQuery);
